@@ -1,6 +1,7 @@
 module Main where
 
 import Core
+import qualified Docker
 import RIO
 import qualified RIO.NonEmpty.Partial as NonEmpty.Partial
 
@@ -9,7 +10,7 @@ makeStep :: Text -> Text -> [Text] -> Step
 makeStep name image commands =
     Step
         { name = StepName name
-        , image = Image image
+        , image = Docker.Image image
         , commands = NonEmpty.Partial.fromList commands
         }
 
@@ -32,6 +33,7 @@ testBuild =
     Build
         { pipeline = testPipeline
         , state = BuildReady
+        , completedSteps = mempty
         }
 
 main :: IO ()

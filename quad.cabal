@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.35.1.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -11,6 +11,8 @@ build-type:     Simple
 library
   exposed-modules:
       Core
+      Docker
+      Socket
   other-modules:
       Paths_quad
   hs-source-dirs:
